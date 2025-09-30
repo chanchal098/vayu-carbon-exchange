@@ -14,7 +14,7 @@ import {
 import vayuLogo from "@/assets/vayu-logo.png";
 
 interface NavigationProps {
-  userType?: 'admin' | 'company' | 'ngo' | null;
+  userType?: 'admin' | 'company' | 'ngo' | 'verifier' | 'buyer' | 'developer' | null;
 }
 
 const Navigation = ({ userType }: NavigationProps) => {
@@ -46,6 +46,7 @@ const Navigation = ({ userType }: NavigationProps) => {
           { label: "Analytics", href: "/admin/analytics" },
         ];
       case 'company':
+      case 'buyer':
         return [
           { label: "Dashboard", href: "/company/dashboard" },
           { label: "Marketplace", href: "/company/marketplace" },
@@ -53,11 +54,18 @@ const Navigation = ({ userType }: NavigationProps) => {
           { label: "Trading", href: "/company/trading" },
         ];
       case 'ngo':
+      case 'developer':
         return [
           { label: "Dashboard", href: "/ngo/dashboard" },
           { label: "Projects", href: "/ngo/projects" },
           { label: "Upload Data", href: "/ngo/upload" },
           { label: "Credits", href: "/ngo/credits" },
+        ];
+      case 'verifier':
+        return [
+          { label: "Dashboard", href: "/verifier/dashboard" },
+          { label: "Pending Reviews", href: "/verifier/dashboard" },
+          { label: "Completed", href: "/verifier/dashboard" },
         ];
       default:
         return [];
@@ -67,8 +75,11 @@ const Navigation = ({ userType }: NavigationProps) => {
   const getUserIcon = () => {
     switch (userType) {
       case 'admin': return <User className="w-4 h-4" />;
-      case 'company': return <Building className="w-4 h-4" />;
-      case 'ngo': return <Users className="w-4 h-4" />;
+      case 'company':
+      case 'buyer': return <Building className="w-4 h-4" />;
+      case 'ngo':
+      case 'developer': return <Users className="w-4 h-4" />;
+      case 'verifier': return <BarChart3 className="w-4 h-4" />;
       default: return null;
     }
   };

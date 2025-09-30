@@ -24,7 +24,7 @@ interface LoginFormData {
 }
 
 const LoginSystem = () => {
-  const [activeTab, setActiveTab] = useState<'admin' | 'company' | 'ngo'>('admin');
+  const [activeTab, setActiveTab] = useState<'admin' | 'buyer' | 'developer' | 'verifier'>('admin');
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
@@ -64,8 +64,9 @@ const LoginSystem = () => {
   const getTabIcon = (tab: string) => {
     switch (tab) {
       case 'admin': return <Shield className="w-5 h-5" />;
-      case 'company': return <Building className="w-5 h-5" />;
-      case 'ngo': return <Users className="w-5 h-5" />;
+      case 'buyer': return <Building className="w-5 h-5" />;
+      case 'developer': return <Users className="w-5 h-5" />;
+      case 'verifier': return <CheckCircle2 className="w-5 h-5" />;
       default: return <User className="w-5 h-5" />;
     }
   };
@@ -74,35 +75,46 @@ const LoginSystem = () => {
     switch (tab) {
       case 'admin': 
         return {
-          title: "NCCR Admin Portal",
-          description: "National Centre for Coastal Research administrative access for project verification, MRV data review, and platform oversight.",
+          title: "Administrator Portal",
+          description: "NCCR administrative access for project verification, MRV data review, token minting approval, and platform oversight.",
           features: [
-            "Project Verification System",
-            "MRV Data Review & Analysis", 
-            "Market Overview & Analytics",
-            "User Management & Compliance"
+            "Cross-Check with NCCR Database",
+            "Validate Certification Standards",
+            "Approve/Reject Projects & Token Minting",
+            "Monitor Marketplace Transactions"
           ]
         };
-      case 'company':
+      case 'buyer':
         return {
-          title: "Corporate Carbon Portal",
-          description: "Enterprise access for carbon credit purchasing, portfolio management, and ESG compliance tracking.",
+          title: "Buyer Portal (Companies/Startups)",
+          description: "Corporate access for carbon credit purchasing, portfolio management, and ESG compliance tracking.",
           features: [
-            "Carbon Credit Marketplace",
-            "Portfolio Management",
-            "Real-time Trading Platform",
-            "ESG Reporting & Analytics"
+            "Browse & Purchase Carbon Tokens",
+            "Filter by Project Type/Location",
+            "Track Carbon Portfolio",
+            "Generate ESG Reports & Retire Tokens"
           ]
         };
-      case 'ngo':
+      case 'developer':
         return {
-          title: "Community & NGO Portal", 
-          description: "Access for NGOs, communities, and coastal panchayats to upload projects and generate carbon credits.",
+          title: "Project Developer Portal", 
+          description: "Access for individuals, communities, NGOs, and coastal panchayats to submit projects and generate carbon credits.",
           features: [
-            "Project Registration & Upload",
-            "MRV Data Submission",
-            "Carbon Credit Generation",
-            "Community Impact Tracking"
+            "Submit Project Details & Land Photos",
+            "Enter Carbon Data & MRV Reports",
+            "Track Verification Status",
+            "List Tokens on Marketplace"
+          ]
+        };
+      case 'verifier':
+        return {
+          title: "Verifier Portal",
+          description: "Independent verification access for examining projects, conducting site visits, and submitting verification reports.",
+          features: [
+            "Access Verification Dashboard",
+            "Examine Project Documents",
+            "Verify Land Details & Carbon Calculations",
+            "Submit Verification Reports & Site Visits"
           ]
         };
       default:
@@ -179,27 +191,34 @@ const LoginSystem = () => {
           
           <CardContent>
             <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as any)}>
-              <TabsList className="grid w-full grid-cols-3 bg-muted/50">
+              <TabsList className="grid w-full grid-cols-4 bg-muted/50">
                 <TabsTrigger 
                   value="admin" 
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs"
                 >
-                  <Shield className="w-4 h-4 mr-2" />
+                  <Shield className="w-4 h-4 mr-1" />
                   Admin
                 </TabsTrigger>
                 <TabsTrigger 
-                  value="company"
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  value="buyer"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs"
                 >
-                  <Building className="w-4 h-4 mr-2" />
-                  Company
+                  <Building className="w-4 h-4 mr-1" />
+                  Buyer
                 </TabsTrigger>
                 <TabsTrigger 
-                  value="ngo"
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  value="developer"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs"
                 >
-                  <Users className="w-4 h-4 mr-2" />
-                  NGO/Community
+                  <Users className="w-4 h-4 mr-1" />
+                  Developer
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="verifier"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-xs"
+                >
+                  <CheckCircle2 className="w-4 h-4 mr-1" />
+                  Verifier
                 </TabsTrigger>
               </TabsList>
 

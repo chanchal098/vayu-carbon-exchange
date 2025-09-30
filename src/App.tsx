@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import CompanyDashboard from "./pages/CompanyDashboard";
 import NGODashboard from "./pages/NGODashboard";
+import VerifierDashboard from "./pages/VerifierDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,9 @@ const App = () => (
           <Route path="/ngo/projects" element={<NGODashboard />} />
           <Route path="/ngo/upload" element={<NGODashboard />} />
           <Route path="/ngo/credits" element={<NGODashboard />} />
+          <Route path="/verifier/dashboard" element={<VerifierDashboard />} />
+          <Route path="/developer/dashboard" element={<NGODashboard />} />
+          <Route path="/buyer/dashboard" element={<CompanyDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
