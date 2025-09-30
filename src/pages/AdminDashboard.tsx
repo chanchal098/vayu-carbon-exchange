@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import RealTimeData from "@/components/RealTimeData";
+import WalletConnect from "@/components/WalletConnect";
 
 interface Project {
   id: string;
@@ -153,13 +154,22 @@ const AdminDashboard = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <Shield className="w-8 h-8 text-primary" />
-            <h1 className="text-3xl font-bold">NCCR Admin Dashboard</h1>
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Shield className="w-8 h-8 text-primary" />
+                <h1 className="text-3xl font-bold">NCCR Admin Dashboard</h1>
+              </div>
+              <p className="text-muted-foreground">
+                National Centre for Coastal Research - Project Verification & Platform Management
+              </p>
+            </div>
           </div>
-          <p className="text-muted-foreground">
-            National Centre for Coastal Research - Project Verification & Platform Management
-          </p>
+        </div>
+
+        {/* Wallet Connection */}
+        <div className="mb-8">
+          <WalletConnect />
         </div>
 
         {/* Stats Overview */}

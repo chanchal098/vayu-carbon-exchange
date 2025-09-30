@@ -20,6 +20,7 @@ import {
   Calendar
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import WalletConnect from "@/components/WalletConnect";
 
 interface CarbonCredit {
   id: string;
@@ -199,6 +200,11 @@ const CompanyDashboard = () => {
           <p className="text-muted-foreground">
             Manage your carbon credit portfolio, track ESG compliance, and offset emissions
           </p>
+        </div>
+
+        {/* Wallet Connection */}
+        <div className="mb-8">
+          <WalletConnect />
         </div>
 
         {/* Stats Overview */}

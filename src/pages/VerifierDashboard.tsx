@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Clock, FileText, MapPin, Calendar, Eye, Upload } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
+import WalletConnect from "@/components/WalletConnect";
 
 const VerifierDashboard = () => {
   const { toast } = useToast();
@@ -97,6 +98,11 @@ const VerifierDashboard = () => {
           <p className="text-muted-foreground">
             Review and verify carbon sequestration projects
           </p>
+        </div>
+
+        {/* Wallet Connection */}
+        <div className="mb-8">
+          <WalletConnect />
         </div>
 
         {/* Stats Overview */}

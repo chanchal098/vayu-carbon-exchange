@@ -147,12 +147,20 @@ const CarbonMap = () => {
             <Card className="bg-gradient-card border-border/20 overflow-hidden shadow-card-vayu">
               <CardContent className="p-0">
                 <div className="relative aspect-[4/3] bg-gradient-to-br from-background to-muted">
-                  {/* India Map Background */}
-                  <img 
-                    src={indiaMapImage}
-                    alt="India Carbon Map"
-                    className="w-full h-full object-cover opacity-60 india-map-glow"
-                  />
+                  {/* India Map Background with enhanced design */}
+                  <div className="absolute inset-0">
+                    <img 
+                      src={indiaMapImage}
+                      alt="India Carbon Map"
+                      className="w-full h-full object-cover opacity-90"
+                      style={{
+                        filter: 'brightness(1.1) contrast(1.2) saturate(1.3)',
+                        mixBlendMode: 'luminosity'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background/20"></div>
+                    <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background/40"></div>
+                  </div>
                   
                   {/* Filter Controls */}
                   <div className="absolute top-4 left-4 flex gap-2">

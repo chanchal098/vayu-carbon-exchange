@@ -6,6 +6,9 @@ import { ArrowRight, Shield, Coins, BarChart3, Leaf, Users, Building, Globe, Che
 import Navigation from "@/components/Navigation";
 import CarbonMap from "@/components/CarbonMap";
 import RealTimeData from "@/components/RealTimeData";
+import HelpDesk from "@/components/HelpDesk";
+import CarbonChatbot from "@/components/CarbonChatbot";
+import Roadmap from "@/components/Roadmap";
 import vayuHero from "@/assets/vayu-hero.jpg";
 const Index = () => {
   const features = [{
@@ -267,6 +270,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Roadmap Section */}
+      <Roadmap />
+
       {/* Call to Action */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -286,7 +292,14 @@ const Index = () => {
               <Link to="/login">
                 <Button className="bg-gradient-primary hover:opacity-90 vayu-glow text-lg px-8 py-4 h-auto">
                   <Shield className="w-5 h-5 mr-3" />
-                  Start Your Journey
+                  Login
+                  <ArrowRight className="w-5 h-5 ml-3" />
+                </Button>
+              </Link>
+              
+              <Link to="/register">
+                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 text-lg px-8 py-4 h-auto">
+                  Create Account
                   <ArrowRight className="w-5 h-5 ml-3" />
                 </Button>
               </Link>
@@ -294,6 +307,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Help Components */}
+      <HelpDesk />
+      <CarbonChatbot />
     </div>;
 };
 export default Index;

@@ -280,47 +280,85 @@ const RealTimeData = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-2 text-sm font-medium text-muted-foreground pb-2 border-b border-border/20">
-              <div>Company</div>
-              <div className="text-center">Credits</div>
-              <div className="text-center">Price/Credit</div>
-              <div className="text-center">Total Value</div>
-              <div className="text-center">Status</div>
-              <div className="text-center">Time</div>
+          {/* Ticker-style real-time feed */}
+          <div className="relative overflow-hidden bg-gradient-to-r from-background via-muted/20 to-background rounded-lg p-4 border border-border/20">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-2 h-2 rounded-full bg-success animate-pulse"></div>
+              <span className="text-sm font-medium text-success">Live Transactions</span>
             </div>
-
-            <div className="space-y-3 max-h-96 overflow-y-auto">
-              {transactions.map((tx, index) => (
+            
+            <div className="space-y-2">
+              {transactions.slice(0, 5).map((tx, index) => (
                 <div 
                   key={tx.id} 
-                  className={`grid grid-cols-1 lg:grid-cols-6 gap-4 p-4 rounded-lg border border-border/20 hover:bg-muted/30 transition-colors ${
-                    index === 0 ? 'animate-fade-in border-primary/30' : ''
+                  className={`flex items-center justify-between p-3 rounded-lg bg-card/50 border border-border/10 hover:border-primary/30 hover:bg-card/70 transition-all ${
+                    index === 0 ? 'animate-fade-in border-primary/20 shadow-glow-accent' : ''
                   }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="flex items-center gap-3">
-                    <Building2 className="w-5 h-5 text-primary" />
-                    <div>
-                      <div className="font-medium">{tx.company}</div>
-                      <div className="text-sm text-muted-foreground">{tx.project}</div>
+                  <div className="flex items-center gap-3 flex-1">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-sm truncate">{tx.company}</div>
+                      <div className="text-xs text-muted-foreground truncate">{tx.project}</div>
                     </div>
                   </div>
 
+                  <div className="flex items-center gap-4 flex-shrink-0">
+                    <div className="text-right">
+                      <div className="font-bold text-primary carbon-counter text-sm">
+                        {tx.credits.toLocaleString()}
+                      </div>
+                      <div className="text-xs text-muted-foreground">credits</div>
+                    </div>
+
+                    <div className="text-right">
+                      <div className="font-bold carbon-counter text-sm">
+                        {formatCurrency(tx.totalValue)}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        @₹{tx.pricePerCredit.toFixed(2)}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col items-end gap-1">
+                      {getStatusBadge(tx.status)}
+                      <div className="text-xs text-muted-foreground">
+                        {formatTime(tx.timestamp)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Detailed transactions table */}
+          <div className="mt-6">
+            <h4 className="font-semibold mb-3">Transaction History</h4>
+            <div className="space-y-2 max-h-96 overflow-y-auto">
+              {transactions.map((tx) => (
+                <div 
+                  key={tx.id} 
+                  className="grid grid-cols-1 md:grid-cols-6 gap-3 p-4 rounded-lg border border-border/20 hover:bg-muted/30 transition-colors"
+                >
+                  <div className="md:col-span-2">
+                    <div className="font-medium text-sm">{tx.company}</div>
+                    <div className="text-xs text-muted-foreground">{tx.project}</div>
+                  </div>
+
                   <div className="text-center">
-                    <div className="font-semibold carbon-counter">{tx.credits.toLocaleString()}</div>
+                    <div className="font-semibold carbon-counter text-sm">{tx.credits.toLocaleString()}</div>
                     <div className="text-xs text-muted-foreground">credits</div>
                   </div>
 
                   <div className="text-center">
-                    <div className="font-semibold carbon-counter">₹{tx.pricePerCredit.toFixed(2)}</div>
-                    <div className="text-xs text-muted-foreground">per credit</div>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="font-semibold text-primary carbon-counter">
+                    <div className="font-semibold text-primary carbon-counter text-sm">
                       {formatCurrency(tx.totalValue)}
                     </div>
-                    <div className="text-xs text-muted-foreground">total</div>
+                    <div className="text-xs text-muted-foreground">₹{tx.pricePerCredit.toFixed(2)}/credit</div>
                   </div>
 
                   <div className="flex justify-center">
@@ -328,7 +366,7 @@ const RealTimeData = () => {
                   </div>
 
                   <div className="text-center">
-                    <div className="font-medium">{formatTime(tx.timestamp)}</div>
+                    <div className="font-medium text-sm">{formatTime(tx.timestamp)}</div>
                     <div className="text-xs text-muted-foreground">
                       {tx.timestamp.toLocaleDateString('en-IN')}
                     </div>

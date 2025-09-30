@@ -29,10 +29,10 @@ const Navigation = ({ userType }: NavigationProps) => {
   const getNavItems = () => {
     if (!userType) {
       return [
-        { label: "Features", href: "#features" },
-        { label: "Carbon Map", href: "#carbon-map" },
-        { label: "Mission 2070", href: "#mission" },
-        { label: "MRV System", href: "#mrv" },
+        { label: "Home", href: "/" },
+        { label: "Public Portal", href: "/public" },
+        { label: "Login", href: "/login" },
+        { label: "Register", href: "/register" }
       ];
     }
 

@@ -22,6 +22,7 @@ import {
   TreePine
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import WalletConnect from "@/components/WalletConnect";
 
 interface ProjectSubmission {
   projectName: string;
@@ -177,6 +178,11 @@ const NGODashboard = () => {
           <p className="text-muted-foreground">
             Upload restoration projects, generate carbon credits, and empower your community
           </p>
+        </div>
+
+        {/* Wallet Connection */}
+        <div className="mb-8">
+          <WalletConnect />
         </div>
 
         {/* Stats Overview */}
