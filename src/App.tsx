@@ -7,10 +7,10 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PublicPortal from "./pages/PublicPortal";
-import AdminDashboard from "./pages/AdminDashboard";
-import CompanyDashboard from "./pages/CompanyDashboard";
+import AdminDashboard from "./pages/EnhancedAdminDashboard";
+import CompanyDashboard from "./pages/EnhancedCompanyDashboard";
 import NGODashboard from "./pages/EnhancedNGODashboard";
-import VerifierDashboard from "./pages/VerifierDashboard";
+import VerifierDashboard from "./pages/EnhancedVerifierDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

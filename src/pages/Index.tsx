@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Coins, BarChart3, Leaf, Users, Building, Globe, CheckCircle2, TrendingUp, Activity } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import CarbonMap from "@/components/EnhancedCarbonMap";
+import LaserFlow from "@/components/LaserFlow";
 import ResearchLink from "@/components/ResearchLink";
 import RealTimeData from "@/components/RealTimeData";
 import HelpDesk from "@/components/HelpDesk";
@@ -59,6 +60,18 @@ const Index = () => {
         backgroundImage: `url(${vayuHero})`
       }}>
           <div className="absolute inset-0 bg-gradient-hero/80"></div>
+        </div>
+        
+        <div className="absolute inset-0 pointer-events-none">
+          <LaserFlow 
+            className=""
+            style={{}}
+            dpr={1}
+            color="#00F0FF"
+            horizontalBeamOffset={0.1}
+            verticalBeamOffset={0.0}
+            fogIntensity={0.3}
+          />
         </div>
         
         <div className="absolute inset-0 carbon-particle"></div>
