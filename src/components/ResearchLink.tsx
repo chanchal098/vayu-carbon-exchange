@@ -18,7 +18,7 @@ const ResearchLink = () => {
           </div>
           <Button 
             className="bg-gradient-primary hover:opacity-90 flex-shrink-0"
-            onClick={() => window.open('https://vayu-blue-path.lovable.app', '_blank')}
+            onClick={() => window.open('#', '_blank')}
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             Visit Research Portal

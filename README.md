@@ -1,22 +1,22 @@
-# Welcome to your Lovable project
+# VAYU DAO - Carbon MRV Platform
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/b34d393d-0007-4f5d-b10a-dc8d38796348
+VAYU DAO is India's first blockchain-powered registry for blue carbon ecosystems, supporting Net Zero 2030 and Mission 2070 through transparent carbon credit tokenization and community empowerment.
 
-## How can I edit this code?
+## Attribution
 
-There are several ways of editing your application.
+This project was originally created using Lovable AI and is based on the work from [chanchal098/vayu-carbon-exchange](https://github.com/chanchal098/vayu-carbon-exchange). This version has been modified and cleaned for independent deployment.
 
-**Use Lovable**
+## Live Demo
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b34d393d-0007-4f5d-b10a-dc8d38796348) and start prompting.
+🚀 **[View Live Demo](https://yourusername.github.io/vayu-carbon-exchange/)**
 
-Changes made via Lovable will be committed automatically to this repo.
+## How to run this project locally
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone this repository and follow the setup instructions below.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +62,13 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/b34d393d-0007-4f5d-b10a-dc8d38796348) and click on Share -> Publish.
+You can deploy this project using various hosting platforms like Vercel, Netlify, or any static hosting service that supports React applications.
 
-## Can I connect a custom domain to my Lovable project?
+## Features
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Blockchain MRV (Monitoring, Reporting, Verification) system
+- Carbon credit tokenization (ERC-20 tokens)
+- Multi-stakeholder platform for admins, corporations, NGOs, and communities
+- Real-time market data and trading dashboard
+- Interactive carbon map with project visualization
+- Role-based dashboards for different user types
