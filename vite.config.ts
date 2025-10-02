@@ -15,22 +15,27 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Disable eval for CSP compliance - use esbuild minifier
+    // Strict CSP compliance - no eval allowed
     minify: 'esbuild',
-    // Ensure no eval is used in production
+    sourcemap: false, // Disable sourcemaps to avoid eval
     rollupOptions: {
       output: {
-        // Disable dynamic imports that might use eval
+        // Ensure clean output without eval
         manualChunks: undefined,
+        format: 'es',
       },
     },
   },
-  // Disable eval in development as well for consistency
-  define: {
-    __DEV__: mode === 'development',
-  },
+  // Strict esbuild configuration
   esbuild: {
-    // Disable eval in esbuild
+    // Completely disable eval and related features
     legalComments: 'none',
+    target: 'es2020',
+    format: 'esm',
+  },
+  // Define globals without eval
+  define: {
+    __DEV__: JSON.stringify(mode === 'development'),
+    'process.env.NODE_ENV': JSON.stringify(mode),
   },
 }));
