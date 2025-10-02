@@ -14,28 +14,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    // Strict CSP compliance - no eval allowed
-    minify: 'esbuild',
-    sourcemap: false, // Disable sourcemaps to avoid eval
-    rollupOptions: {
-      output: {
-        // Ensure clean output without eval
-        manualChunks: undefined,
-        format: 'es',
-      },
-    },
-  },
-  // Strict esbuild configuration
-  esbuild: {
-    // Completely disable eval and related features
-    legalComments: 'none',
-    target: 'es2020',
-    format: 'esm',
-  },
-  // Define globals without eval
-  define: {
-    __DEV__: JSON.stringify(mode === 'development'),
-    'process.env.NODE_ENV': JSON.stringify(mode),
-  },
 }));
