@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Coins, BarChart3, Leaf, Users, Building, Globe, CheckCircle2, TrendingUp, Activity } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import CarbonMap from "@/components/EnhancedCarbonMap";
-import LaserFlow from "@/components/LaserFlow";
 import ResearchLink from "@/components/ResearchLink";
 import RealTimeData from "@/components/RealTimeData";
 import HelpDesk from "@/components/HelpDesk";
@@ -62,18 +61,6 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-hero/80"></div>
         </div>
         
-        <div className="absolute inset-0 pointer-events-none">
-          <LaserFlow 
-            className=""
-            style={{}}
-            dpr={1}
-            color="#00F0FF"
-            horizontalBeamOffset={0.1}
-            verticalBeamOffset={0.0}
-            fogIntensity={0.3}
-          />
-        </div>
-        
         <div className="absolute inset-0 carbon-particle"></div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -99,6 +86,8 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+              <ResearchLink />
+              
               <Link to="/login">
                 <Button className="bg-gradient-primary hover:opacity-90 vayu-glow text-lg px-8 py-4 h-auto">
                   <Building className="w-5 h-5 mr-3" />
@@ -284,12 +273,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Research Link */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <ResearchLink />
-        </div>
-      </section>
 
       {/* Roadmap Section */}
       <Roadmap />

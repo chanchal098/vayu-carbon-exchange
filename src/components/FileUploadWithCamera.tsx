@@ -128,7 +128,7 @@ const FileUploadWithCamera = ({ type, label, onUpload, multiple = false }: FileU
                 type="file"
                 className="hidden"
                 accept="image/*"
-                capture="environment"
+                capture="user"
                 multiple={multiple}
                 onChange={handleFileSelect}
               />

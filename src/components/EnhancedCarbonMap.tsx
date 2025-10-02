@@ -16,6 +16,7 @@ import {
   TrendingUp,
   FileText
 } from "lucide-react";
+import indiaMap from "@/assets/india-carbon-map.jpg";
 
 interface CarbonProject {
   id: string;
@@ -238,30 +239,18 @@ const EnhancedCarbonMap = () => {
           <div className="lg:col-span-2">
             <Card className="bg-gradient-card border-border/20 overflow-hidden shadow-card-vayu">
               <CardContent className="p-0">
-                <div className="relative aspect-[4/3] bg-gradient-to-br from-primary/5 via-background to-accent/5">
-                  {/* Enhanced Map Background */}
+                <div 
+                  className="relative w-full aspect-[4/3] bg-cover bg-center overflow-hidden"
+                  style={{
+                    backgroundImage: `url(${indiaMap})`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundColor: 'hsl(var(--background))'
+                  }}
+                >
+                  {/* Enhanced Map with Indian Background */}
                   <div className="absolute inset-0">
-                    <svg viewBox="0 0 1000 750" className="w-full h-full">
-                      {/* India outline (simplified) */}
-                      <path 
-                        d="M 200 200 L 250 150 L 350 120 L 450 150 L 550 180 L 600 220 L 650 280 L 700 350 L 720 420 L 710 500 L 680 580 L 620 640 L 550 680 L 480 700 L 400 700 L 320 680 L 250 640 L 200 580 L 180 500 L 180 420 L 190 350 L 200 280 L 200 200"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className="text-primary/30"
-                      />
-                      <path 
-                        d="M 200 200 L 250 150 L 350 120 L 450 150 L 550 180 L 600 220 L 650 280 L 700 350 L 720 420 L 710 500 L 680 580 L 620 640 L 550 680 L 480 700 L 400 700 L 320 680 L 250 640 L 200 580 L 180 500 L 180 420 L 190 350 L 200 280 L 200 200"
-                        fill="url(#mapGradient)"
-                        opacity="0.1"
-                      />
-                      <defs>
-                        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" style={{stopColor: 'var(--primary)', stopOpacity: 0.3}} />
-                          <stop offset="100%" style={{stopColor: 'var(--accent)', stopOpacity: 0.1}} />
-                        </linearGradient>
-                      </defs>
-                    </svg>
                     <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background/10"></div>
                   </div>
                   

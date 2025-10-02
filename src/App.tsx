@@ -11,6 +11,7 @@ import AdminDashboard from "./pages/EnhancedAdminDashboard";
 import CompanyDashboard from "./pages/EnhancedCompanyDashboard";
 import NGODashboard from "./pages/EnhancedNGODashboard";
 import VerifierDashboard from "./pages/EnhancedVerifierDashboard";
+import MarketAnalyticsPage from "./pages/MarketAnalyticsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,8 +30,8 @@ const App = () => (
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/projects" element={<AdminDashboard />} />
           <Route path="/admin/verification" element={<AdminDashboard />} />
-          <Route path="/admin/market" element={<AdminDashboard />} />
-          <Route path="/admin/analytics" element={<AdminDashboard />} />
+          <Route path="/admin/market" element={<MarketAnalyticsPage />} />
+          <Route path="/admin/analytics" element={<MarketAnalyticsPage />} />
           <Route path="/company/dashboard" element={<CompanyDashboard />} />
           <Route path="/company/marketplace" element={<CompanyDashboard />} />
           <Route path="/company/portfolio" element={<CompanyDashboard />} />
