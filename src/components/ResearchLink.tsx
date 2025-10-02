@@ -1,8 +1,15 @@
 import { BookOpen, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ResearchLink = () => {
+  const navigate = useNavigate();
+
+  const handleResearchClick = () => {
+    navigate('/research');
+  };
+
   return (
     <Card className="bg-gradient-card border-primary/30 shadow-card-vayu hover:shadow-glow-accent transition-all">
       <CardContent className="p-6">
@@ -18,7 +25,7 @@ const ResearchLink = () => {
           </div>
           <Button 
             className="bg-gradient-primary hover:opacity-90 flex-shrink-0"
-            onClick={() => window.open('#', '_blank')}
+            onClick={handleResearchClick}
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             Visit Research Portal

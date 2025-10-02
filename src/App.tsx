@@ -12,6 +12,8 @@ import CompanyDashboard from "./pages/EnhancedCompanyDashboard";
 import NGODashboard from "./pages/EnhancedNGODashboard";
 import VerifierDashboard from "./pages/EnhancedVerifierDashboard";
 import MarketAnalyticsPage from "./pages/MarketAnalyticsPage";
+import Research from "./pages/Research";
+import Innovation from "./pages/Innovation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/public" element={<PublicPortal />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/innovation" element={<Innovation />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/projects" element={<AdminDashboard />} />
           <Route path="/admin/verification" element={<AdminDashboard />} />
