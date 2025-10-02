@@ -10,6 +10,9 @@
     
     <!-- Explicitly disable favicon - Updated for React deployment -->
     <link rel="icon" href="data:,">
+    
+    <!-- Content Security Policy - Strict for production deployment -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self';">
 
     <meta property="og:title" content="VAYU DAO - Blockchain Carbon MRV Platform" />
     <meta property="og:description" content="India's revolutionary blockchain platform for carbon credit tokenization and environmental monitoring. Supporting Mission 2070 and Net Zero 2030." />
@@ -23,7 +26,15 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content while React loads -->
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; font-family: system-ui;">
+        <div style="text-align: center;">
+          <h1 style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(45deg, #10b981, #3b82f6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">VAYU DAO</h1>
+          <p>Loading Carbon MRV Platform...</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
