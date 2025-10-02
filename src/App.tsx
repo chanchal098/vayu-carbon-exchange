@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import PublicPortal from "./pages/PublicPortal";
 import AdminDashboard from "./pages/AdminDashboard";
 import CompanyDashboard from "./pages/CompanyDashboard";
-import NGODashboard from "./pages/NGODashboard";
+import NGODashboard from "./pages/EnhancedNGODashboard";
 import VerifierDashboard from "./pages/VerifierDashboard";
 import NotFound from "./pages/NotFound";
 

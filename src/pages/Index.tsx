@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Coins, BarChart3, Leaf, Users, Building, Globe, CheckCircle2, TrendingUp, Activity } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import CarbonMap from "@/components/CarbonMap";
+import CarbonMap from "@/components/EnhancedCarbonMap";
+import ResearchLink from "@/components/ResearchLink";
 import RealTimeData from "@/components/RealTimeData";
 import HelpDesk from "@/components/HelpDesk";
 import CarbonChatbot from "@/components/CarbonChatbot";
@@ -267,6 +268,13 @@ const Index = () => {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Research Link */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <ResearchLink />
         </div>
       </section>
 
