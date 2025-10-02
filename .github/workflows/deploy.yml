@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Deploy VAYU DAO React App
 
 on:
   push:
@@ -33,9 +33,6 @@ jobs:
     - name: Build React project
       run: npm run build
       
-    - name: List build output
-      run: ls -la dist/
-        
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
