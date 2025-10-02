@@ -6,7 +6,7 @@ VAYU DAO is India's first blockchain-powered registry for blue carbon ecosystems
 
 ## Attribution
 
-This project was originally created using Lovable AI and is based on the work from [chanchal098/vayu-carbon-exchange](https://github.com/chanchal098/vayu-carbon-exchange). This version has been modified and cleaned for independent deployment.
+
 
 ## Live Demo
 
