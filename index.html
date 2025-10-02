@@ -1,29 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VAYU DAO - Blockchain Carbon MRV Platform | Smart India Hackathon 2024</title>
-    <meta name="description" content="India's first blockchain-based blue carbon MRV system. Tokenize carbon credits, track emissions, and contribute to Mission 2070 & Net Zero 2030 goals." />
-    <meta name="author" content="VAYU DAO Team - Smart India Hackathon 2024" />
-    <meta name="keywords" content="blockchain, carbon credits, MRV, blue carbon, India, Mission 2070, Net Zero 2030, tokenization, climate action" />
-    
-    <!-- Explicitly disable favicon -->
-    <link rel="icon" href="data:,">
-
-    <meta property="og:title" content="VAYU DAO - Blockchain Carbon MRV Platform" />
-    <meta property="og:description" content="India's revolutionary blockchain platform for carbon credit tokenization and environmental monitoring. Supporting Mission 2070 and Net Zero 2030." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/vayu-logo.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="VAYU DAO - Blockchain Carbon MRV Platform" />
-    <meta name="twitter:description" content="India's first blockchain-based carbon tokenization platform for Mission 2070" />
-    <meta name="twitter:image" content="/vayu-logo.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAYU DAO - Blockchain Carbon MRV Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature h3 {
+            color: #10b981;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">VAYU DAO</div>
+        <div class="subtitle">Blockchain Carbon MRV Platform</div>
+        
+        <div class="description">
+            India's first blockchain-powered registry for blue carbon ecosystems. 
+            Supporting <strong>Net Zero 2030</strong> and <strong>Mission 2070</strong> 
+            through transparent carbon credit tokenization and community empowerment.
+        </div>
+        
+        <div class="status">
+            🎉 <strong>GitHub Pages Deployment Successful!</strong><br>
+            Your VAYU DAO platform is now live on the web.
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🔗 Blockchain MRV</h3>
+                <p>Immutable monitoring, reporting, and verification system</p>
+            </div>
+            <div class="feature">
+                <h3>🪙 Token Credits</h3>
+                <p>ERC-20 carbon credit tokenization (1 BCC = 1 ton CO₂e)</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Real-time Data</h3>
+                <p>Live market analytics and trading dashboard</p>
+            </div>
+            <div class="feature">
+                <h3>🗺️ Interactive Map</h3>
+                <p>Geographic visualization of carbon projects</p>
+            </div>
+        </div>
+        
+        <div>
+            <a href="https://github.com/ravijii/vayu-carbon-exchange" class="btn">View Source Code</a>
+            <a href="#" class="btn" onclick="alert('Full React app coming soon!')">Launch Full App</a>
+        </div>
+        
+        <div style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">
+            <p>🌱 Contributing to India's climate goals through verifiable carbon credits</p>
+            <p>Built with React, TypeScript, Vite & Tailwind CSS</p>
+        </div>
+    </div>
+</body>
 </html>
